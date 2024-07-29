@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('StudentPerformance.csv')
+# Count the number of students in each group
+group_counts = df['Group'].value_counts()
+
+# Display counts for groups A through E
+for group in ['A', 'B', 'C', 'D', 'E']:
+    print(f'Number of students in group {group}: {group_counts.get(group, 0)}')
+# Count the number of students in each group
+group_counts = df['Group'].value_counts()
+
+# Display counts for groups A through E
+for group in ['A', 'B', 'C', 'D', 'E']:
+    print(f'Number of students in group {group}: {group_counts.get(group, 0)}')
+# Filter students who completed the test prep course
+completed_test_prep = df[df['TestPrep'] == 'Completed']
+
+# Print reading, writing, and math scores
+print(completed_test_prep[['ReadingScore', 'WritingScore', 'MathScore']])
+
